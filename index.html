@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#161a16">
+  <title>125 · Возвращение</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="assets/atlas.js"></script>
+  <script defer src="assets/new-art.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body>
+  <main>
+    <header><a class="wordmark" href="./index.html" aria-label="Начать сначала">125<span>HIGH SCHOOL</span></a><span class="dedication">Для учителя. С теплом.</span></header>
+    <section class="game" aria-label="Игра «Возвращение в школу»">
+      <canvas id="scene" width="1086" height="430" tabindex="0" aria-label="A — влево, D — вправо, E — взаимодействовать"></canvas>
+      <div class="objective" id="objective" hidden><span>ЦЕЛЬ</span><p id="objective-text"></p></div>
+      <div class="prompt" id="prompt" hidden><kbd>E</kbd><span id="prompt-text"></span></div>
+      <div class="direction-hint" id="direction-hint" hidden><span>К школе</span><kbd>D</kbd><b aria-hidden="true">→</b></div>
+      <div class="veil" id="veil"></div>
+      <div class="cover" id="intro">
+        <span class="eyebrow">ЗНАКОМОЕ МЕСТО</span>
+        <h1>Возвращение</h1>
+        <p>Тихий школьный двор. Свет в знакомых окнах.<br>Ещё один путь к своему кабинету.</p>
+        <button id="start" disabled>Загрузка…</button>
+        <span class="intro-controls"><kbd>A</kbd> <kbd>D</kbd> — двигаться <i>·</i> <kbd>E</kbd> — взаимодействовать</span>
+      </div>
+      <div class="cover ending" id="ending" hidden><span class="eyebrow">КАБИНЕТ 102</span><h1>Продолжение…</h1><button id="restart">Пройти ещё раз</button></div>
+      <p id="load-error" role="alert" hidden>Не удалось загрузить изображение. Распакуйте весь архив и откройте index.html заново.</p>
+    </section>
+    <footer><span id="scene-label">Школа №125</span><span class="controls"><kbd>A</kbd> <kbd>D</kbd> Двигаться <span class="dot">·</span> <kbd>E</kbd> Взаимодействовать</span><span class="chapter" id="chapter">01 / 03</span></footer>
+    <div class="touch" aria-label="Сенсорное управление"><button data-key="KeyA" aria-label="Влево">A <span>←</span></button><button data-key="KeyD" aria-label="Вправо">D <span>→</span></button><button data-key="KeyE" aria-label="Взаимодействовать">E <span>Войти</span></button></div>
+    <noscript>Для игры необходимо включить JavaScript.</noscript>
+  </main>
+</body>
+</html>

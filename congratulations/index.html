@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ff7a59">
+<title>Спасибо Вам! 💛</title>
+<style>
+:root{
+  --ink:#26314c;
+  --muted:#66708a;
+  --cream:#fffaf1;
+  --pink:#ff5f91;
+  --orange:#ff8a4c;
+  --yellow:#ffd84d;
+  --blue:#5da9ff;
+  --purple:#8e73ff;
+  --mint:#58d6b1;
+  --card:#ffffff;
+  --shadow:0 18px 45px rgba(71,60,121,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 8% 12%,rgba(255,216,77,.35),transparent 24rem),
+    radial-gradient(circle at 92% 22%,rgba(93,169,255,.25),transparent 24rem),
+    radial-gradient(circle at 25% 82%,rgba(255,95,145,.17),transparent 25rem),
+    #fffaf5;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed; inset:0; pointer-events:none; z-index:-1;
+  background-image:radial-gradient(rgba(38,49,76,.08) 1px,transparent 1px);
+  background-size:18px 18px;
+}
+a{color:inherit}
+.hero{
+  min-height:100svh;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(320px,1fr);
+  gap:44px;
+  align-items:center;
+  padding:clamp(28px,5vw,72px);
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#fff8dd 0%,#ffe8ee 38%,#e8f5ff 72%,#f0eaff 100%);
+}
+.hero::after{
+  content:"125";
+  position:absolute;
+  right:-2vw; top:-8vw;
+  font:900 clamp(13rem,30vw,34rem)/1 Arial,sans-serif;
+  color:rgba(255,255,255,.45);
+  letter-spacing:-.08em;
+  pointer-events:none;
+}
+.hero-copy{position:relative;z-index:2;max-width:760px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 15px;border-radius:999px;
+  background:white;box-shadow:var(--shadow);
+  font-weight:800;font-size:.9rem;letter-spacing:.04em;
+}
+.hero h1{
+  margin:24px 0 20px;
+  font-size:clamp(4rem,9vw,8rem);
+  line-height:.87;
+  letter-spacing:-.075em;
+  font-weight:900;
+}
+.hero h1 .line1{
+  background:linear-gradient(90deg,var(--orange),var(--pink),var(--purple));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero h1 .line2{display:block;color:var(--ink)}
+.hero p{
+  font-size:clamp(1.05rem,2vw,1.4rem);
+  line-height:1.7;
+  max-width:660px;
+  color:#4f5974;
+}
+.cta{
+  display:inline-flex;align-items:center;gap:10px;margin-top:26px;
+  text-decoration:none;font-weight:800;color:white;
+  padding:14px 22px;border-radius:999px;
+  background:linear-gradient(90deg,var(--pink),var(--orange));
+  box-shadow:0 12px 28px rgba(255,95,145,.28);
+  transition:.2s transform,.2s box-shadow;
+}
+.cta:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(255,95,145,.35)}
+.hero-collage{
+  position:relative;z-index:2;
+  min-height:650px;
+}
+.snap{
+  position:absolute;
+  width:min(310px,42vw);
+  padding:10px 10px 34px;
+  background:white;
+  border-radius:18px;
+  box-shadow:0 22px 55px rgba(57,55,92,.2);
+}
+.snap img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block}
+.snap:nth-child(1){left:2%;top:3%;transform:rotate(-7deg)}
+.snap:nth-child(2){right:1%;top:15%;transform:rotate(7deg)}
+.snap:nth-child(3){left:20%;bottom:1%;transform:rotate(2deg)}
+.snap::after{content:"♥";position:absolute;right:16px;bottom:6px;font-size:22px;color:var(--pink)}
+.spark{position:absolute;font-size:clamp(2rem,4vw,4.2rem);z-index:3;filter:drop-shadow(0 8px 12px rgba(0,0,0,.08))}
+.s1{left:3%;bottom:16%;transform:rotate(-12deg)}
+.s2{right:7%;bottom:4%;transform:rotate(9deg)}
+.s3{right:18%;top:1%}
+
+main{width:min(1180px,92vw);margin:auto;padding:100px 0 120px}
+.intro{
+  display:grid;grid-template-columns:.7fr 1.3fr;gap:48px;
+  align-items:start;margin-bottom:100px;
+}
+.eyebrow{font-size:.82rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--pink)}
+.intro h2{
+  margin:8px 0 0;
+  font-size:clamp(2.6rem,6vw,5.5rem);
+  line-height:.98;letter-spacing:-.055em;
+}
+.letter{
+  background:white;border-radius:30px;padding:clamp(28px,4vw,48px);
+  box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.letter::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:9px;
+  background:linear-gradient(90deg,var(--yellow),var(--orange),var(--pink),var(--purple),var(--blue),var(--mint));
+}
+.letter p{font-size:1.08rem;line-height:1.85;color:#555f78;margin:0 0 18px}
+.quote{
+  margin-top:28px;
+  padding:22px 24px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#fff4c8,#ffe8f2);
+  font-size:1.22rem;line-height:1.55;font-weight:750;color:#454d67;
+}
+
+.ribbon{
+  margin:0 calc(50% - 50vw) 80px;
+  padding:20px 0;
+  overflow:hidden;
+  transform:rotate(-1deg);
+  background:linear-gradient(90deg,var(--pink),var(--orange),var(--yellow),var(--mint),var(--blue),var(--purple));
+  color:white;font-weight:900;letter-spacing:.05em;
+}
+.ribbon-track{
+  display:flex;width:max-content;gap:42px;
+  animation:marquee 24s linear infinite;
+  white-space:nowrap;font-size:1.05rem;
+}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+.section-head{
+  display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px
+}
+.section-head h3{margin:0;font-size:clamp(2.4rem,5vw,4.4rem);letter-spacing:-.05em}
+.section-head p{margin:0;color:var(--muted);max-width:420px;line-height:1.6}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:18px;
+}
+.photo{
+  margin:0;position:relative;overflow:hidden;border-radius:22px;
+  background:#eee;box-shadow:var(--shadow);cursor:pointer;
+  min-height:250px;opacity:0;transform:translateY(18px) scale(.98);
+  transition:.55s opacity,.55s transform,.2s box-shadow;
+}
+.photo.show{opacity:1;transform:none}
+.photo:hover{box-shadow:0 24px 58px rgba(71,60,121,.23)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s transform}
+.photo:hover img{transform:scale(1.035)}
+.photo::after{
+  content:"";position:absolute;inset:auto 0 0 0;height:35%;
+  background:linear-gradient(transparent,rgba(24,26,44,.18));pointer-events:none;
+}
+.photo:nth-child(6n+1),.photo:nth-child(6n+4){grid-column:span 7;min-height:430px}
+.photo:nth-child(6n+2),.photo:nth-child(6n+3){grid-column:span 5;min-height:430px}
+.photo:nth-child(6n+5),.photo:nth-child(6n+6){grid-column:span 6;min-height:360px}
+
+.memory-strip{
+  margin:95px 0;
+  padding:42px;
+  border-radius:32px;
+  background:linear-gradient(120deg,#5da9ff,#8e73ff 55%,#ff5f91);
+  color:white;
+  display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;
+  box-shadow:0 22px 60px rgba(99,101,216,.24);
+}
+.memory-strip h3{font-size:clamp(2rem,4vw,3.8rem);line-height:1.02;margin:0 0 12px;letter-spacing:-.04em}
+.memory-strip p{margin:0;max-width:720px;line-height:1.7;color:rgba(255,255,255,.9)}
+.memory-strip .big-heart{font-size:clamp(4rem,9vw,8rem);filter:drop-shadow(0 12px 20px rgba(0,0,0,.16))}
+
+.ending{
+  margin-top:95px;border-radius:36px;padding:clamp(42px,7vw,84px);
+  text-align:center;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#fff1b8,#ffd4df 45%,#dcecff);
+  box-shadow:var(--shadow);
+}
+.ending::before,.ending::after{
+  position:absolute;font-size:120px;opacity:.15;
+}
+.ending::before{content:"★";left:3%;top:-20px;color:var(--orange)}
+.ending::after{content:"♥";right:4%;bottom:-35px;color:var(--pink)}
+.ending small{display:block;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--purple);margin-bottom:16px}
+.ending h3{font-size:clamp(2.6rem,6vw,5.4rem);line-height:.98;letter-spacing:-.055em;margin:0 auto 24px;max-width:900px}
+.ending p{max-width:760px;margin:auto;font-size:1.08rem;line-height:1.8;color:#5b647c}
+.signature{margin-top:30px;font-size:1.5rem;font-weight:850;color:var(--pink)}
+
+.modal{
+  position:fixed;inset:0;background:rgba(15,18,31,.94);z-index:50;
+  display:none;place-items:center;padding:28px;
+}
+.modal.open{display:grid}
+.modal img{max-width:min(1200px,94vw);max-height:90vh;border-radius:18px;box-shadow:0 30px 100px #000}
+.modal button{
+  position:fixed;right:22px;top:18px;width:50px;height:50px;
+  border:1px solid rgba(255,255,255,.2);border-radius:50%;
+  color:white;background:rgba(255,255,255,.1);font-size:30px;cursor:pointer
+}
+
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;padding:28px 18px 48px}
+  .hero-collage{min-height:520px;margin-top:0}
+  .snap{width:min(250px,60vw)}
+  .snap:nth-child(1){left:4%}
+  .snap:nth-child(2){right:3%;top:18%}
+  .snap:nth-child(3){left:25%;bottom:0}
+  .intro{grid-template-columns:1fr;gap:22px}
+  .gallery{gap:10px}
+  .photo,.photo:nth-child(n){grid-column:span 6;min-height:250px;border-radius:16px}
+  .memory-strip{grid-template-columns:1fr;padding:30px}
+  .memory-strip .big-heart{display:none}
+}
+@media(max-width:560px){
+  .hero h1{font-size:clamp(3.6rem,19vw,5.6rem)}
+  .hero-collage{min-height:430px}
+  .snap{padding:7px 7px 26px;border-radius:13px}
+  .gallery{grid-template-columns:1fr}
+  .photo,.photo:nth-child(n){grid-column:auto;min-height:0;aspect-ratio:auto}
+  .photo img{height:auto;max-height:none}
+  main{padding-top:70px}
+  .section-head{align-items:start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .photo{opacity:1;transform:none}
+}
+/* Reveal the greeting after the dark classroom transition. */
+.page-reveal{position:fixed;inset:0;z-index:100;background:#000;pointer-events:none;animation:reveal-greeting .9s ease-out forwards}
+@keyframes reveal-greeting{to{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.page-reveal{display:none}}
+</style>
+</head>
+<body>
+<div class="page-reveal" aria-hidden="true"></div>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="badge">💛 125 HIGH SCHOOL • наши воспоминания</div>
+    <h1><span class="line1">Спасибо</span><span class="line2">Вам!</span></h1>
+    <p>За уроки, поддержку, терпение, шутки, школьные дни и всё то, что со временем превращается в самые тёплые воспоминания.</p>
+    <a class="cta" href="#letter">Открыть наши воспоминания ↓</a>
+  </div>
+
+  <div class="hero-collage" aria-hidden="true">
+    <figure class="snap"><img src="assets/photo-02.jpg" alt=""></figure>
+    <figure class="snap"><img src="assets/photo-17.jpg" alt=""></figure>
+    <figure class="snap"><img src="assets/photo-25.jpg" alt=""></figure>
+    <div class="spark s1">✨</div>
+    <div class="spark s2">💛</div>
+    <div class="spark s3">★</div>
+  </div>
+</section>
+
+<main>
+  <section class="intro" id="letter">
+    <div>
+      <div class="eyebrow">От Ваших учеников</div>
+      <h2>Школьные годы закончились.<br>Воспоминания — нет.</h2>
+    </div>
+    <div class="letter">
+      <p>Мы выросли, у каждого появились свои планы, новые места и новые люди. Но знакомые школьные коридоры, кабинет, уроки и люди, которые были рядом, всё равно остаются частью нашей истории.</p>
+      <p>Спасибо Вам за время, которое Вы отдавали нам. За моменты, когда объясняли ещё раз. За поддержку, когда она была нужна. За строгость, когда без неё было нельзя. И за обычные дни, ценность которых понимаешь только спустя время.</p>
+      <div class="quote">Пусть эти фотографии напомнят, сколько всего мы успели прожить вместе. И сколько хорошего осталось с нами после школы. ❤️</div>
+    </div>
+  </section>
+
+  <div class="ribbon">
+    <div class="ribbon-track">
+      <span>125 HIGH SCHOOL ✦ СПАСИБО ✦ НАШИ ВОСПОМИНАНИЯ ✦ ВМЕСТЕ ✦</span>
+      <span>125 HIGH SCHOOL ✦ СПАСИБО ✦ НАШИ ВОСПОМИНАНИЯ ✦ ВМЕСТЕ ✦</span>
+      <span>125 HIGH SCHOOL ✦ СПАСИБО ✦ НАШИ ВОСПОМИНАНИЯ ✦ ВМЕСТЕ ✦</span>
+      <span>125 HIGH SCHOOL ✦ СПАСИБО ✦ НАШИ ВОСПОМИНАНИЯ ✦ ВМЕСТЕ ✦</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Фотоальбом</div>
+        <h3>Наши моменты</h3>
+      </div>
+      <p>Здесь больше разных кадров из архива — без длинных повторяющихся серий. Нажмите на любую фотографию, чтобы открыть её крупнее.</p>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <section class="memory-strip">
+    <div>
+      <h3>Один класс. Много историй.</h3>
+      <p>На фотографиях менялись лица, одежда, места и годы. Но именно из таких маленьких моментов и складывается то, что потом называешь школьными воспоминаниями.</p>
+    </div>
+    <div class="big-heart">💛</div>
+  </section>
+
+  <section class="ending">
+    <small>Спасибо Вам</small>
+    <h3>За то, что были частью нашей школьной истории.</h3>
+    <p>Мы можем забыть отдельные темы, даты и домашние задания. Но людей, которые помогали нам расти, поддерживали и делали школьные годы особенными, забыть намного сложнее.</p>
+    <div class="signature">С любовью, Ваши ученики ❤️</div>
+  </section>
+</main>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <button aria-label="Закрыть">×</button>
+  <img alt="Школьное воспоминание">
+</div>
+
+<script>
+const PHOTO_COUNT = 25;
+const photos = Array.from({length:PHOTO_COUNT},(_,i)=>`assets/photo-${String(i+1).padStart(2,'0')}.jpg`);
+const gallery = document.getElementById('gallery');
+
+photos.forEach((src,i)=>{
+  const figure=document.createElement('figure');
+  figure.className='photo';
+  const img=document.createElement('img');
+  img.src=src;
+  img.alt=`Школьное воспоминание ${i+1}`;
+  img.loading=i<5?'eager':'lazy';
+  img.decoding='async';
+  figure.appendChild(img);
+  gallery.appendChild(figure);
+});
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.06});
+document.querySelectorAll('.photo').forEach(el=>observer.observe(el));
+
+const modal=document.getElementById('modal');
+const modalImg=modal.querySelector('img');
+gallery.addEventListener('click',e=>{
+  const img=e.target.closest('img');
+  if(!img)return;
+  modalImg.src=img.src;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+});
+function closeModal(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  modalImg.src='';
+  document.body.style.overflow='';
+}
+modal.querySelector('button').onclick=closeModal;
+modal.onclick=e=>{if(e.target===modal)closeModal()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
